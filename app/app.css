@@ -1,0 +1,10 @@
+﻿@import url("~/platform.css");
+
+TextField{
+    height: 20;
+    margin-bottom: 10;
+}
+
+Button{
+    height: 20;
+}

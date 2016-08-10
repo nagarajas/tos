@@ -1,0 +1,16 @@
+<StackLayout> 
+    <TextField #email hint="User" keyboardType="email"
+        returnKeyType="next" autocorrect="false"
+        autocapitalizationType="none" [(ngModel)]="user.email" style="margin:10"></TextField>
+    <TextField #password hint="Password" [(ngModel)]="user.password" returnKeyType="done"
+        (returnPress)="login()" secure="true"  style="margin:10"></TextField>
+
+    <StackLayout orientation="horizontal" style="horizontal-align:center" >
+        <Button text="Clear" (tap)="clear()"></Button>
+        <Button text="OK" style="margin-left:10;" (tap)="login()" ></Button>
+    </StackLayout>
+
+    <Button text="Register" style="margin-top:10" (tap)="register()"></Button>
+      
+    
+</StackLayout>
