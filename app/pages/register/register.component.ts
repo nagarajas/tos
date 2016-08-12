@@ -1,5 +1,6 @@
 import {Component, OnInit,ViewChild,ElementRef} from '@angular/core';
 import {Router} from "@angular/router";
+import {FirebaseService} from "../../shared/firebase/firebase.service";
 import {User} from "../../shared/user/user";
 
 @Component({
@@ -12,20 +13,27 @@ export class RegisterComponent{
   @ViewChild("email") email:ElementRef;
   @ViewChild("password") password: ElementRef;
 
-  constructor(private _roter:Router) {
+  constructor(private _router:Router, private _firebase:FirebaseService) {
      this.user = new User();  
   }
 
   clear(){
     this.user.email="";
     this.user.password="";
+    this.user.displayName ="";
   }
  
   login(){
-      this._roter.navigate(["/"]);
+      this._router.navigate(["/"]);
   }
 
   register(){
-     console.log(JSON.stringify(this.user));
+     this._firebase.register(this.user).then((success)=>{
+          this.clear();
+          alert("Yay!! you can login now.");
+        }
+        ,(error)=> {
+          alert(error);
+        });
   }
 }

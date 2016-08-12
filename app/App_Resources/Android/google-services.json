@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "133751177346",
+    "firebase_url": "https://terminaloperatingsystem-629d4.firebaseio.com",
+    "project_id": "terminaloperatingsystem-629d4",
+    "storage_bucket": "terminaloperatingsystem-629d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133751177346:android:e7d82eea8bfa2073",
+        "android_client_info": {
+          "package_name": "org.nativescript.tos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "133751177346-r116dl7pe3tvsvd4vapbj1fv9jkn2i0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKu_ilyaQavy1D8caHkNOisJxlwEs4JkI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<TabView #tabview selectedIndex="0">
+        <StackLayout *tabItem="{title: 'INBOUND'}">
+           <containerlist [containers]="inboundContainers" (jobchange)="inboundJobChange($event)">
+           </containerlist>
+        </StackLayout>
+        <StackLayout *tabItem="{title: 'OUTBOUND'}">            
+            <containerlist [containers]="outboundContainers" (jobchange)="outboundJobChange($event)">
+          </containerlist>
+        </StackLayout>
+</TabView>

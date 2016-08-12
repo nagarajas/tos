@@ -1,9 +1,28 @@
 <StackLayout>
-    <TextField #email hint="Email" keyboardType="email"
-        returnKeyType="next" autocorrect="false"
-        autocapitalizationType="none" [(ngModel)]="user.email" style="margin:10"></TextField>
-    <TextField #password hint="Password" [(ngModel)]="user.password"  returnKeyType="done"
-        (returnPress)="register()" secure="true"  style="margin:10"></TextField>
+    <TextField #name 
+        hint="display name" 
+        returnKeyType="next" 
+        autocapitalizationType="none" 
+        [(ngModel)]="user.displayName" 
+        style="margin:10">
+    </TextField>
+    <TextField #email 
+        hint="Email" 
+        keyboardType="email"
+        returnKeyType="next" 
+        autocorrect="false"
+        autocapitalizationType="none" 
+        [(ngModel)]="user.email" 
+        style="margin:10">
+    </TextField>
+    <TextField #password 
+        hint="Password" 
+        [(ngModel)]="user.password"  
+        returnKeyType="done"
+        (returnPress)="register()" 
+        secure="true"  
+        style="margin:10">
+    </TextField>
 
     <StackLayout orientation="horizontal" style="horizontal-align:center" >
         <Button text="Clear" (tap)="clear()"></Button>

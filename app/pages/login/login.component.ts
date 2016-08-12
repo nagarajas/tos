@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {FirebaseService} from "../../shared/firebase/firebase.service";
 import {User} from "../../shared/user/user";
 
 
@@ -10,12 +11,13 @@ import {User} from "../../shared/user/user";
 export class  LoginComponent implements OnInit{
 
   user: User;
-  constructor(private _roter:Router) {
+  constructor(private _router:Router, private _firebase:FirebaseService) {
      this.user = new User();
   }
 
   ngOnInit(){
-    
+    this.user.email="nagaraja.s@neudesic.com";
+    this.user.password="include";
   }
 
   clear(){
@@ -24,11 +26,15 @@ export class  LoginComponent implements OnInit{
   }
 
   login(){
-    
+    this._firebase.login(this.user).then((success) =>{
+      this._router.navigate(["/terminal",{ clearHistory: true }]);
+    }, (erro)=>{
+      alert(erro);
+    });
   }
 
   register(){
-     
+     this._router.navigate(["/register"])
   }
 
 }
