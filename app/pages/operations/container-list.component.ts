@@ -1,5 +1,5 @@
-import {Component,Input, Output, EventEmitter} from '@angular/core';
-import observable = require("data/observable");
+import {Component,Input, Output, EventEmitter, ElementRef,ViewChild, OnInit} from '@angular/core';
+import {Observable} from "data/observable";
 import {Container} from "../../shared/container/container";
 import {ObservableArray} from "data/observable-array";
 
@@ -7,17 +7,21 @@ import {ObservableArray} from "data/observable-array";
   selector: 'containerlist',
   templateUrl: "pages/operations/container-list.html"
 })
-export class ContainerListComponent {
+export class ContainerListComponent implements OnInit {
 
   @Input() containers:ObservableArray<Container>;  
   @Output() jobchange = new EventEmitter();
+  @ViewChild("cntrlist") cntrlist: ElementRef;
+
   constructor() {    
         
   }
-  
-  
+
+  ngOnInit(){
+     
+  }
+
   switchPropertyChange(args){
-    var cntr = this.containers.getItem(args.index);
-    this.jobchange.emit(args);
+    this.jobchange.emit({cntr:args,listview:this.cntrlist.nativeElement});
   }
 }

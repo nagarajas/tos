@@ -1,7 +1,10 @@
+import {Observable} from "data/observable";
 
-export class Container {
+export class Container extends Observable {
+   
    constructor(public cntrNumber:string
-                ,public isJobCompleted:boolean) {
-            //super();
+            ,public isJobCompleted:boolean) {         
+        
+        super();
     }
 }

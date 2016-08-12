@@ -1,5 +1,5 @@
 <GridLayout>
-<ListView [items]="containers" style="margin-left:4;margin-right:4">
+<ListView #cntrlist [items]="containers" style="margin-left:4;margin-right:4">
     <template let-item="item" let-odd="odd" let-even="even">
         <DockLayout stretchLastChild="true" style="background-color:#ECEFF1" height="60">
             <Label [text]="item.cntrNumber" dock="left" width="100"  textWrap="true"></Label>
